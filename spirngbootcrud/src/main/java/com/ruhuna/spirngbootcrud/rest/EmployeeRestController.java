@@ -1,8 +1,7 @@
 package com.ruhuna.spirngbootcrud.rest;
 
-import com.ruhuna.spirngbootcrud.dao.EmployeeDAO.IEmployeeDAO;
 import com.ruhuna.spirngbootcrud.entities.Employee;
-import com.ruhuna.spirngbootcrud.service.iEmployeeService;
+import com.ruhuna.spirngbootcrud.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,11 +10,12 @@ import java.util.List;
 @RequestMapping("api")
 @RestController
 public class EmployeeRestController {
-//    private IEmployeeDAO employeeDAO;
 
-    private iEmployeeService employeeService;
+    private IEmployeeService employeeService;
     @Autowired
-    public EmployeeRestController(iEmployeeService employeeService) {
+
+
+    public EmployeeRestController(IEmployeeService employeeService) {
         this.employeeService = employeeService;
     }
     //constructor injection

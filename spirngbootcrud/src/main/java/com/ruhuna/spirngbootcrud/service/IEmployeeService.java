@@ -4,7 +4,7 @@ import com.ruhuna.spirngbootcrud.entities.Employee;
 
 import java.util.List;
 
-public interface iEmployeeService
+public interface IEmployeeService
 {
 
     List<Employee> findAll();
