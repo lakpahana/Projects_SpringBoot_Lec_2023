@@ -9,4 +9,7 @@ import java.util.List;
 //interfaces is a way to achieve abstraction
 public interface IEmployeeDAO {
     List<Employee> findAll();
+    Employee findById(int id);
+    Employee save();
+    void deleteById(int id);
 }
