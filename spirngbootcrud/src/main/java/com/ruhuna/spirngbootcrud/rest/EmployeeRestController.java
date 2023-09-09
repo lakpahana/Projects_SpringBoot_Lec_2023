@@ -25,11 +25,12 @@ public class EmployeeRestController {
     @GetMapping("/employees")
     List<Employee> findAll() {
 //        System.out.println("sadas");
-        return employeeDAO.findAll();
+        return null;
     }
 
     @GetMapping("/employees/{requestedId}")
     Employee findEmployeeById(@PathVariable int requestedId){
-        return employeeDAO.findById(requestedId);
+        return null;
+
     }
 }

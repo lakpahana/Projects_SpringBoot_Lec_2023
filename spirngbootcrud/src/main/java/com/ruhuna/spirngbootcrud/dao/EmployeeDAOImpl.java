@@ -15,6 +15,7 @@ public class EmployeeDAOImpl implements IEmployeeDAO {
 
     @Autowired
     public EmployeeDAOImpl(EntityManager entityManager) {
+
         this.entityManager = entityManager;
     }
 
@@ -33,12 +34,14 @@ public class EmployeeDAOImpl implements IEmployeeDAO {
     }
 
     @Override
-    public Employee save() {
-        return new Employee();
+    public Employee save(Employee employee) {
+        Employee savedEmployee = entityManager.merge(employee);
+        return savedEmployee;
     }
 
     @Override
     public void deleteById(int id) {
-//        return null;
+        Employee employee = entityManager.find(Employee.class,id);
+        entityManager.remove(employee);
     }
 }
